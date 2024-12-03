@@ -14,5 +14,5 @@ const PORT = 3000;
 
 // Запускаем сервер
 server.listen(PORT, () => {
-  console.log(`Сервер запущен на http://localhost:${PORT}`);
+  console.log(`Сервер запущен. Порт:${PORT}`);
 });
