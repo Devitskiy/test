@@ -1,18 +1,15 @@
-const http = require("http");
+const express = require('express'); // Подключаем Express
+const app = express(); // Создаем приложение
 
-// Создаем сервер
-const server = http.createServer((req, res) => {
-  // Устанавливаем заголовки ответа
-  res.writeHead(200, { "Content-Type": "text/plain" });
-
-  // Тело ответа
-  res.end("Hello, World!");
+// Маршрут для главной страницы
+app.get('/', (req, res) => {
+  res.send('Hello, Express!');
 });
 
-// Указываем порт для сервера
+// Порт, на котором работает сервер
 const PORT = 3000;
 
-// Запускаем сервер
-server.listen(PORT, () => {
-  console.log(`Сервер запущен. Порт:${PORT}`);
+// Запуск сервера
+app.listen(PORT, () => {
+  console.log(`Сервер запущен на http://localhost:${PORT}`);
 });
